@@ -2,10 +2,282 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mon site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elie Attali · IA, Machine Learning &amp; Modélisation</title>
+  <meta name="description" content="Portfolio d'Elie Attali, étudiant à l'ENSAE Paris : intelligence artificielle, machine learning et modélisation quantitative.">
+  <meta name="author" content="Elie Attali">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0d0f12" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="https://elieattali.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Elie Attali · IA, Machine Learning &amp; Modélisation">
+  <meta property="og:description" content="Étudiant à l'ENSAE Paris, je travaille sur l'IA, le machine learning et la modélisation quantitative.">
+  <meta property="og:url" content="https://elieattali.github.io/">
+  <meta property="og:locale" content="fr_FR">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Appliqué avant le rendu pour éviter un flash du mauvais thème -->
+  <script>
+    (function () {
+      // Toujours arriver en haut de page au chargement (pas de restauration
+      // de la position de défilement, pas de saut vers une ancre de l'URL)
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <h1>Bonjour !</h1>
-  <p>Bienvenue sur mon site.</p>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Elie Attali, retour en haut">
+        <span class="brand-mark" aria-hidden="true">EA</span>
+        <span class="brand-name">Elie Attali</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+          <span class="sr-only">Menu</span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-toggle" type="button" aria-label="Changer de thème">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="container">
+        <p class="eyebrow reveal">ENSAE Paris · Institut Polytechnique de Paris</p>
+        <h1 class="hero-title reveal">
+          Bonjour, je suis <em class="hero-name">Elie</em>.
+        </h1>
+        <p class="hero-lead reveal">
+          Étudiant à l'ENSAE Paris, je travaille sur l'intelligence artificielle, le machine learning
+          et la modélisation quantitative&nbsp;: des LLM aux transformers débiaisés, en passant par
+          les modèles de survie actuariels.
+        </p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#projets">Voir mes projets</a>
+          <a class="btn btn-ghost" href="https://github.com/elieattali" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-gh"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div class="hero-grid" aria-hidden="true"></div>
+    </section>
+
+    <!-- À propos -->
+    <section class="section" id="a-propos" aria-labelledby="a-propos-title">
+      <div class="container about">
+        <div class="section-head reveal">
+          <p class="section-index">01</p>
+          <h2 id="a-propos-title" class="section-title">À propos</h2>
+        </div>
+        <dl class="facts reveal">
+          <div class="fact">
+            <dt>Formation</dt>
+            <dd>ENSAE Paris<br><span class="muted">Institut Polytechnique de Paris</span></dd>
+          </div>
+          <div class="fact">
+            <dt>Domaines</dt>
+            <dd>IA &amp; machine learning, modélisation quantitative</dd>
+          </div>
+          <div class="fact">
+            <dt>En ce moment</dt>
+            <dd>LLM, transformers débiaisés, modèles de survie actuariels</dd>
+          </div>
+          <div class="fact">
+            <dt>Localisation</dt>
+            <dd>France</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section class="section" id="projets" aria-labelledby="projets-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-index">02</p>
+          <h2 id="projets-title" class="section-title">Projets</h2>
+        </div>
+
+        <ul class="projects" role="list">
+          <li class="project reveal">
+            <article>
+              <p class="project-meta">Projet ENSAE · Data science</p>
+              <h3 class="project-title">
+                <a href="https://github.com/elieattali/ENSAE-Python-pour-la-data-science" target="_blank" rel="noopener">
+                  Reverse engineering du Nutri-Score
+                </a>
+              </h3>
+              <p class="project-desc">
+                Quels nutriments pèsent réellement dans la note&nbsp;? Exploration et nettoyage des
+                données OpenFoodFacts, puis Random Forest et analyse de l'importance des variables,
+                enrichie de features métier.
+              </p>
+              <ul class="tags" role="list" aria-label="Technologies">
+                <li>Python</li><li>pandas</li><li>scikit-learn</li><li>Data viz</li>
+              </ul>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </article>
+          </li>
+
+          <li class="project reveal">
+            <article>
+              <p class="project-meta">Apprentissage · Deep learning</p>
+              <h3 class="project-title">
+                <a href="https://github.com/elieattali/apprentissage" target="_blank" rel="noopener">
+                  Réseaux de neurones from scratch
+                </a>
+              </h3>
+              <p class="project-desc">
+                Réimplémentation pas à pas des briques du deep learning, à commencer par micrograd,
+                un moteur de différentiation automatique, dans le sillage des cours d'Andrej Karpathy.
+              </p>
+              <ul class="tags" role="list" aria-label="Technologies">
+                <li>Python</li><li>PyTorch</li><li>NumPy</li><li>Jupyter</li>
+              </ul>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </article>
+          </li>
+
+          <li class="project reveal">
+            <article>
+              <p class="project-meta">Projet ENSAE · Algorithmique</p>
+              <h3 class="project-title">
+                <a href="https://github.com/elieattali/Projet-de-programmation-ENSAE" target="_blank" rel="noopener">
+                  Sélection de paires dans une grille
+                </a>
+              </h3>
+              <p class="project-desc">
+                Apparier des cellules adjacentes d'une grille colorée sous contraintes de couleur afin
+                de minimiser un score. Modélisation orientée objet et algorithmes de résolution.
+              </p>
+              <ul class="tags" role="list" aria-label="Technologies">
+                <li>Python</li><li>Optimisation</li><li>POO</li>
+              </ul>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </article>
+          </li>
+
+          <li class="project reveal">
+            <article>
+              <p class="project-meta">Économétrie · Séries temporelles</p>
+              <h3 class="project-title">
+                <a href="https://github.com/elieattali/ARIMA-modelling-of-a-time-series" target="_blank" rel="noopener">
+                  Modélisation ARIMA d'une série temporelle
+                </a>
+              </h3>
+              <p class="project-desc">
+                Stationnarisation, identification, estimation et validation d'un modèle ARIMA, puis
+                prévision, le tout documenté dans un rapport reproductible.
+              </p>
+              <ul class="tags" role="list" aria-label="Technologies">
+                <li>R</li><li>R Markdown</li><li>Statistiques</li>
+              </ul>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+            </article>
+          </li>
+        </ul>
+
+        <p class="projects-more reveal">
+          <a class="link" href="https://github.com/elieattali?tab=repositories" target="_blank" rel="noopener">
+            Tous mes dépôts sur GitHub <span aria-hidden="true">→</span>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section class="section" id="competences" aria-labelledby="competences-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-index">03</p>
+          <h2 id="competences-title" class="section-title">Compétences</h2>
+        </div>
+
+        <div class="skills">
+          <div class="skill-group reveal">
+            <h3>ML &amp; IA</h3>
+            <ul class="tags" role="list">
+              <li>Python</li><li>PyTorch</li><li>scikit-learn</li><li>pandas</li>
+              <li>NumPy</li><li>Hugging Face</li><li>Azure OpenAI</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Langages &amp; bases de données</h3>
+            <ul class="tags" role="list">
+              <li>C++</li><li>C</li><li>OCaml</li><li>Java</li>
+              <li>R</li><li>SQL</li><li>MongoDB</li>
+            </ul>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Outils &amp; web</h3>
+            <ul class="tags" role="list">
+              <li>Git</li><li>GitHub Actions</li><li>TypeScript</li>
+              <li>JavaScript</li><li>HTML</li><li>CSS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="section-index">04</p>
+          <h2 id="contact-title" class="section-title">Contact</h2>
+        </div>
+        <p class="contact-lead reveal">
+          Un stage, un projet, une question&nbsp;?<br><em>Parlons-en.</em>
+        </p>
+        <ul class="contact-links reveal" role="list">
+          <li>
+            <a class="btn btn-primary" href="https://github.com/elieattali" target="_blank" rel="noopener">GitHub</a>
+          </li>
+          <!-- À compléter :
+          <li><a class="btn btn-ghost" href="mailto:ADRESSE@EXEMPLE.COM">E-mail</a></li>
+          <li><a class="btn btn-ghost" href="https://www.linkedin.com/in/IDENTIFIANT/" target="_blank" rel="noopener">LinkedIn</a></li>
+          -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Elie Attali</p>
+      <a class="link" href="#top">Haut de page <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
 </body>
 </html>
