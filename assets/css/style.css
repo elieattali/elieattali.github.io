@@ -566,17 +566,20 @@ em {
 /* À propos */
 
 .facts {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--border);
 }
 
 .fact {
   display: grid;
-  align-content: start;
-  gap: 0.6rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--text);
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 1.1rem;
+  border-top: 1px solid var(--border);
+}
+
+.fact:first-child {
+  border-top-color: var(--text);
 }
 
 .fact dt {
@@ -588,7 +591,7 @@ em {
 }
 
 .fact dd {
-  font-size: clamp(1.05rem, 1rem + 0.25vw, 1.15rem);
+  font-size: clamp(1.02rem, 1rem + 0.15vw, 1.1rem);
   font-weight: 500;
   line-height: 1.45;
   text-wrap: pretty;
@@ -605,6 +608,15 @@ em {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+/* Nombre impair de projets : la dernière carte occupe toute la largeur */
+.project:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.project:last-child:nth-child(odd) .project-desc {
+  max-width: 44rem;
 }
 
 .project article {
@@ -780,10 +792,6 @@ em {
    ========================================================================== */
 
 @media (max-width: 900px) {
-  .facts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .skills {
     grid-template-columns: 1fr;
   }
@@ -796,8 +804,9 @@ em {
 }
 
 @media (max-width: 420px) {
-  .facts {
+  .fact {
     grid-template-columns: 1fr;
+    gap: 0.35rem;
   }
 
   .hero-actions .btn,
